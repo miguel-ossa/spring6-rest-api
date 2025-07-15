@@ -11,7 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build docs
-        run: ./make.sh
+        run: |
+          chmod +x ./make.sh
+          ./make.sh
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
